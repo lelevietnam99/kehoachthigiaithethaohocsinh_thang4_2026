@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kế Hoạch Tham Gia Giải Thể Thao Học Sinh TP.HCM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #d97706;
+            --bg-color: #f3f4f6;
+            --text-main: #333333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .header .date-badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Nav Grid */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .nav-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .greeting {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            font-style: italic;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Card Styles */
+        .section-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 18px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-title i {
+            color: var(--secondary-color);
+        }
+
+        /* List Styles */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-text {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Timeline/Route Styles */
+        .route-day {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 2px dashed #cbd5e1;
+            position: relative;
+        }
+
+        .day-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        /* Map Links (Full URL visible) */
+        .map-box {
+            background-color: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .map-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .map-link-full {
+            display: inline-block;
+            color: #2563eb;
+            text-decoration: none;
+            word-break: break-all; /* Đảm bảo link dài sẽ tự động xuống dòng không bị tràn */
+            font-family: monospace;
+            font-size: 14px;
+            background-color: #e0e7ff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .map-link-full:hover {
+            background-color: #dbeafe;
+            text-decoration: underline;
+        }
+
+        /* Contact Styles */
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .phone-number {
+            font-weight: bold;
+            color: #047857;
+            letter-spacing: 0.5px;
+        }
+
+        .closing {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 500;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 20px; }
+            body { padding: 10px; }
+            .nav-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Kế Hoạch Tham Gia Giải Thể Thao Học Sinh<br>Thành Phố Hồ Chí Minh</h1>
+            <div class="date-badge"><i class="far fa-clock"></i> Thời gian diễn ra: Từ ngày 09/04/2026 - 10/04/2026</div>
+        </div>
+
+        <div class="nav-grid">
+            <a href="danh-sach-vdv-cap1.html" class="nav-item"><i class="fas fa-child"></i> Danh Sách Cấp 1</a>
+            <a href="danh-sach-vdv-cap2.html" class="nav-item"><i class="fas fa-user-graduate"></i> Danh Sách Cấp 2</a>
+            <a href="danh-sach-vdv.html" class="nav-item"><i class="fas fa-user-ninja"></i> Danh Sách Cấp 3</a>
+            <a href="lich-thi-dau.html" class="nav-item"><i class="fas fa-calendar-alt"></i> Lịch Thi Đấu</a>
+        </div>
+
+        <div class="greeting">
+            Dạ con kính thưa Quý Thầy<br><br>
+            Dạ chúng con xin gửi Quý Thầy, đề xuất kế hoạch tham gia Giải Thể Thao Học Sinh - Thành phố Hồ Chí Minh
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-bus"></i> A. PHƯƠNG TIỆN</h2>
+            <ul>
+                <li><span class="highlight-text">Xe 16 chỗ:</span></li>
+                <li>Thầy Pháp Tánh, Pháp Hỷ, Pháp Tĩnh, Trí Đạt, Trí Tấn, Trí Khiêm, Trí Đăng, Trí Cần, Trí Phúc, Trí Giác, Trí An, Trí Thiện, Trí Niệm, Trí Khai</li>
+                <li>(chưa tính tài xế)</li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-route"></i> B. LỘ TRÌNH</h2>
+            
+            <div class="route-day">
+                <div class="day-title">THỨ 4, Ngày 08/04</div>
+                <ul>
+                    <li><strong style="color: var(--text-main);">1. Tổ Đình - Chùa Bửu Lâm</strong></li>
+                    <li>- Xuất phát: 14h30</li>
+                    <li>- Tại Chùa Bửu Lâm: dự kiến 19h15</li>
+                </ul>
+            </div>
+
+            <div class="route-day">
+                <div class="day-title">THỨ 5, ngày 09/04 - THỨ 6, ngày 10/04</div>
+                <ul>
+                    <li><strong style="color: var(--text-main);">1. Chùa Bửu Lâm - Trung tâm Cung ứng DV VHTT Phường Tân Thuận</strong></li>
+                    <li>- Trung tâm HLTĐ TDTT KV3 <em>(Tùy vào tình hình thực tế chúng con di chuyển qua lại 2 điểm để thi đấu và nghỉ ngơi ạ)</em></li>
+                    <li>- (Thời gian di chuyển: 40 phút)</li>
+                    
+                    <li style="margin-top: 15px;"><strong style="color: var(--text-main);">2. Chùa Bửu Lâm - Tổ Đình</strong></li>
+                    <li>- Xuất phát: TỐI THỨ 6, ngày 10/04</li>
+                    <li>- Tại Tổ Đình: 21h30 (nghỉ ngơi)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-utensils"></i> C. ĂN UỐNG</h2>
+            <ul>
+                <li>- TỪ THỨ 5 ĐẾN THỨ 6: Chúng con ăn uống tại chùa Bửu Lâm ạ</li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> D. THÔNG TIN ĐỊA ĐIỂM</h2>
+            
+            <div class="map-box">
+                <strong>1. Tổ đình:</strong>
+                <a href="https://maps.app.goo.gl/2eBqKFjWXDYZZqhv6" target="_blank" class="map-link-full">
+                    https://maps.app.goo.gl/2eBqKFjWXDYZZqhv6
+                </a>
+            </div>
+            
+            <div class="map-box">
+                <strong>2. Chùa Bửu Lâm:</strong>
+                <a href="https://maps.app.goo.gl/Mcz5okxxCMcMqvnL8" target="_blank" class="map-link-full">
+                    https://maps.app.goo.gl/Mcz5okxxCMcMqvnL8
+                </a>
+            </div>
+            
+            <div class="map-box">
+                <strong>3. Trung tâm Cung ứng DV VHTT Phường Tân Thuận:</strong>
+                <a href="https://maps.app.goo.gl/SRTcVS8sVigrHNdz5" target="_blank" class="map-link-full">
+                    https://maps.app.goo.gl/SRTcVS8sVigrHNdz5
+                </a>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title"><i class="fas fa-address-book"></i> E. THÔNG TIN LIÊN HỆ</h2>
+            <ul class="contact-list">
+                <li><i class="fas fa-phone-alt" style="color: #047857;"></i> Thầy Pháp Tánh: <span class="phone-number">0394 261 802</span></li>
+                <li><i class="fas fa-phone-alt" style="color: #047857;"></i> Thầy Lê Đình Nhất (Trường Nguyễn Trãi): <span class="phone-number">0985 962 946</span></li>
+                <li><i class="fas fa-phone-alt" style="color: #047857;"></i> Thầy Dương (TH Kim Dinh): <span class="phone-number">0977 688 031</span></li>
+                <li><i class="fas fa-phone-alt" style="color: #047857;"></i> Thầy Hùng (Trường Trần Đại Nghĩa): <span class="phone-number">0933 570 039</span></li>
+                <li><i class="fas fa-phone-alt" style="color: #047857;"></i> Thầy Trung (Trường Nguyễn Bỉnh Khiêm): <span class="phone-number">0786 857 868</span></li>
+            </ul>
+        </div>
+
+        <div class="closing">
+            Dạ chúng con kính trình trên Quý Thầy ạ.
+        </div>
+    </div>
+
+</body>
+</html>
